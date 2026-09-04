@@ -1,0 +1,24 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: agroTecno
+  data:
+    mongodb:
+      uri: mongodb+srv://camilomoscoso_db_user:yrUu0Vjfdix6t9Wh@cluster0.wpwjkvt.mongodb.net/agrotecno_db?appName=Cluster0
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+    deserialization:
+      fail-on-unknown-properties: false
+    date-format: yyyy-MM-dd
+
+springdoc:
+  api-docs:
+    enabled: true
+    path: /api-docs
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+    operations-sorter: method
