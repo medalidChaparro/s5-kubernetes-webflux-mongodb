@@ -2,6 +2,7 @@
 # kubectl delete -f medalid-chaparro-03-deployment.yml
 
 apiVersion: apps/v1
+
 kind: Deployment
 
 metadata:
@@ -22,10 +23,15 @@ spec:
 
     spec:
       containers:
-        - name: medalid-chaparro-03-container
-          image: medalidcondezo/s5-springwebflux-mongodb:latest
-          imagePullPolicy: Always
+      - name: medalid-chaparro-03-container
 
-          envFrom:
-            - secretRef:
-                name: medalid-chaparro-03-secret
+        image: medalidcondezo/s5-springwebflux-mongodb:latest
+
+        imagePullPolicy: Always
+
+        envFrom:
+        - secretRef:
+            name: medalid-chaparro-03-secret
+
+        - configMapRef:
+            name: medalid-chaparro-03-configmap
